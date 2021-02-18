@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1401
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFDALTestGUI", "EFDALTestGUI.csproj", "{AFD76D73-2FB5-4BD7-9DE5-48A115485911}"
+EndProject
+Project("{AA6C8D78-22FF-423A-9C7C-5F2393824E04}") = "EFDAL", "..\EFDAL\EFDAL.xsproj", "{DE8910A4-D0F7-4CED-A56D-C97430379A90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFD76D73-2FB5-4BD7-9DE5-48A115485911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD76D73-2FB5-4BD7-9DE5-48A115485911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD76D73-2FB5-4BD7-9DE5-48A115485911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD76D73-2FB5-4BD7-9DE5-48A115485911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE8910A4-D0F7-4CED-A56D-C97430379A90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8910A4-D0F7-4CED-A56D-C97430379A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8910A4-D0F7-4CED-A56D-C97430379A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8910A4-D0F7-4CED-A56D-C97430379A90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4BAE25B-02E4-4AF6-B0A1-8670777CDF37}
+	EndGlobalSection
+EndGlobal

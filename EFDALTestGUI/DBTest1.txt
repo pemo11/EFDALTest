@@ -1,0 +1,44 @@
+﻿[Oracle]
+Datenbank arbghro_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=arbghro_admin;Password=arbghro_admin
+[Oracle]
+Datenbank arbghst_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=arbghst_admin;Password=arbghst_admin
+[Oracle]
+Datenbank arbgnb_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=arbgnb_admin;Password=aarbgnb_admin
+[Oracle]
+Datenbank arbgsn_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=arbgsn_admin;Password=arbgsn_admin
+[Oracle]
+Datenbank fghgw_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=fghgw_admin;Password=fghgw_admin
+[Oracle]
+Datenbank larbghro_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=larbghro_admin;Password=larbghro_admin
+[Oracle]
+Datenbank lsgnb_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=lsgnb_admin;Password=lsgnb_admin
+[Oracle]
+Datenbank ovghgw_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=ovghgw_admin;Password=ovghgw_admin
+[Oracle]
+Datenbank sghro_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=sghro_admin;Password=sghro_admin
+[Oracle]
+Datenbank sgshst_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=sgshst_admin;Password=sgshst_admin
+[Oracle]
+Datenbank sgnb_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=sgnb_admin;Password=sgnb_admin
+[Oracle]
+Datenbank sgsn_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=sgsn_admin;Password=sgsn_admin
+[Oracle]
+Datenbank vghgw_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=vghgw_admin;Password=vghgw_admin
+[Oracle]
+Datenbank vgsn_admin
+Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oravm2)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=Eureka)));User Id=vgsn_admin;Password=vgsn_admin
+
+
