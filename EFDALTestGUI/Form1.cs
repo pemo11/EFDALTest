@@ -27,8 +27,8 @@ namespace EFDALTestGUI
             this.rbbDataReader.Checked = true;
             string appVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             this.Text += $" ({appVersion})";
-            lblCurrentConfigPath.Text = "Keine Config-Datei";
-            lblCurrentDataDicPath.Text = "Keine DataDic-Datei";
+            txtCurrentConfigPath.Text = "Keine Config-Datei";
+            txtCurrentDataDicPath.Text = "Keine DataDic-Datei";
         }
 
         private void btnEditConfig_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace EFDALTestGUI
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     currentConfigPath = ofd.FileName;
-                    lblCurrentConfigPath.Text = currentConfigPath;
+                    txtCurrentConfigPath.Text = currentConfigPath;
                     try
                     {
                         ProcessStartInfo pInfo = new ProcessStartInfo("Notepad", currentConfigPath);
@@ -183,9 +183,10 @@ namespace EFDALTestGUI
                             infoMessage = $"*** Erstelle Xml-DataDictionary für {conString} ***";
                             LogMessage(infoMessage);
                             dbName = Regex.Match(conString, @"User Id=([\w_]+)").Groups[1].Value;
-                            if (EFDAL.DBHelper.CreateOracleDataDic(conString, dbName))
+                            string dicPfad = EFDAL.DBHelper.CreateOracleDataDic(conString, dbName);
+                            if (dicPfad != "")
                             {
-                                infoMessage = $"*** Xml-DataDictionary wurde erstellt ***";
+                                infoMessage = $"*** Xml-DataDictionary wurde unter {dicPfad} erstellt ***";
                                 LogMessage(infoMessage);
                             }
                             else
@@ -207,9 +208,10 @@ namespace EFDALTestGUI
                             infoMessage = $"*** Erstelle Xml-DataDictionary für {conString} ***";
                             LogMessage(infoMessage);
                             dbName = Regex.Match(conString, @"Initial Catalog\s*=\s*(\w+)").Groups[1].Value;
-                            if (EFDAL.DBHelper.CreateSqlServerDataDic(conString, dbName))
+                            string dicPfad = EFDAL.DBHelper.CreateSqlServerDataDic(conString, dbName);
+                            if (dicPfad != "")
                             {
-                                infoMessage = $"*** Xml-DataDictionary wurde erstellt ***";
+                                infoMessage = $"*** Xml-DataDictionary wurde unter {dicPfad} erstellt ***";
                                 LogMessage(infoMessage);
                             }
                             else
@@ -231,9 +233,10 @@ namespace EFDALTestGUI
                             infoMessage = $"*** Erstelle Xml-DataDictionary für {conString} ***";
                             LogMessage(infoMessage);
                             dbName = Regex.Match(conString, @"Database\s*=\s*(\w+)").Groups[1].Value;
-                            if (EFDAL.DBHelper.CreateSqlServerDataDic(conString, dbName))
+                            string dicPfad = EFDAL.DBHelper.CreatePostgreDataDic(conString, dbName);
+                            if (dicPfad != "")
                             {
-                                infoMessage = $"*** Xml-DataDictionary wurde erstellt ***";
+                                infoMessage = $"*** Xml-DataDictionary wurde unter {dicPfad} erstellt ***";
                                 LogMessage(infoMessage);
                             }
                             else
@@ -252,7 +255,8 @@ namespace EFDALTestGUI
                 }
             }
             dauerSec = (DateTime.Now - startZeit).TotalSeconds;
-            MessageBox.Show($"Auftrag ausgeführt in {dauerSec:n2}s", "EFDALTest");
+            infoMessage = $"Auftrag ausgeführt in {dauerSec:n2}s";
+            LogMessage(infoMessage);
         }
 
         private void bnTestAuswahl_Click(object sender, EventArgs e)
@@ -264,7 +268,7 @@ namespace EFDALTestGUI
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     currentTestPath = ofd.FileName;
-                    lblCurrentDataDicPath.Text = currentTestPath;
+                    txtCurrentDataDicPath.Text = currentTestPath;
                 }
             }
         }

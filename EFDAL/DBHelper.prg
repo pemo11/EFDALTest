@@ -25,7 +25,7 @@ BEGIN NAMESPACE EFDAL
         Constructor()
             Return
             
-        Public Static Method CreateOracleDataDic(ConString As String, UserId As String) As Logic
+        Public Static Method CreateOracleDataDic(ConString As String, UserId As String) As String
             Local xNs := XNamespace.Get("eureka-fach") As XNamespace
             Local xDbDoc := XElement{XName.Get("Database", xNs:NamespaceName), XAttribute{XNamespace.Xmlns + "ef", xNs},;
              XAttribute{"constring", ConString}} As XElement
@@ -56,7 +56,7 @@ BEGIN NAMESPACE EFDAL
             catch ex As SystemException
                 infoMessage := i"!!! Fehler beim Abrufen der Oracle-Daten (" + ex:Message + ") !!!"
                 LogHelper.LogError(infoMessage, ex)
-                Return False
+                Return ""
             end try
             
             try
@@ -65,15 +65,15 @@ BEGIN NAMESPACE EFDAL
                 xDbDoc:Save(xmlPfad)
                 infoMessage := i"*** {xmlPfad} wurde gespeichert ***"
                 LogHelper.LogInfo(infoMessage)
-                Return True
+                Return xmlPfad
             catch ex As SystemException
                 infoMessage := i"!!! Fehler beim Abspeichern von {xmlPfad} (" + ex:Message + ") !!!"
                 LogHelper.LogError(infoMessage, ex)
-                Return False
+                Return ""
             end try
                 
 
-        Public Static Method CreateSqlServerDataDic(ConString As String, DbName As String) As Logic
+        Public Static Method CreateSqlServerDataDic(ConString As String, DbName As String) As String
             try
                 Local xNs := XNamespace.Get("eureka-fach") As XNamespace
                 Local xDbDoc := XElement{XName.Get("Database", xNs:NamespaceName), XAttribute{XNamespace.Xmlns + "ef", xNs},;
@@ -105,7 +105,7 @@ BEGIN NAMESPACE EFDAL
                 catch ex As SystemException
                     infoMessage := i"!!! Fehler beim Abrufen der SQL-Server-Daten (" + ex:Message + ") !!!"
                     LogHelper.LogError(infoMessage, ex)
-                    Return False
+                    Return ""
                 end try
                 try
                     // Xml-Dateien werden im Temp-Verzeichnis abgelegt
@@ -113,20 +113,20 @@ BEGIN NAMESPACE EFDAL
                     xDbDoc:Save(xmlPfad)
                     infoMessage := i"*** {xmlPfad} wurde gespeichert ***"
                     LogHelper.LogInfo(infoMessage)
-                    Return True
+                    Return xmlPfad
                 catch ex As SystemException
                     infoMessage := i"!!! Fehler beim Abspeichern von {xmlPfad} (" + ex:Message + ") !!!"
                     LogHelper.LogError(infoMessage, ex)
-                    Return False
+                    Return ""
                 end try
             catch ex As SystemException
                 infoMessage := i"!!! Allgemeiner Fehler in CreateSqlServerDataDic bei ConString={ConString} !!!"
                 LogHelper.LogError(infoMessage, ex)
-                Return False
+                Return ""
             end try
 
 
-        Public Static Method CreatePostgreDataDic(ConString As String, DbName As String) As Logic
+        Public Static Method CreatePostgreDataDic(ConString As String, DbName As String) As String
             try
                 Local xNs := XNamespace.Get("eureka-fach") As XNamespace
                 Local xDbDoc := XElement{XName.Get("Database", xNs:NamespaceName), XAttribute{XNamespace.Xmlns + "ef", xNs},;
@@ -158,7 +158,7 @@ BEGIN NAMESPACE EFDAL
                 catch ex As SystemException
                     infoMessage := i"!!! Fehler beim Abrufen der Postgre-Server-Daten (" + ex:Message + ") !!!"
                     LogHelper.LogError(infoMessage, ex)
-                    Return False
+                    Return ""
                 end try
                 try
                     // Xml-Dateien werden im Temp-Verzeichnis abgelegt
@@ -166,16 +166,16 @@ BEGIN NAMESPACE EFDAL
                     xDbDoc:Save(xmlPfad)
                     infoMessage := i"*** {xmlPfad} wurde gespeichert ***"
                     LogHelper.LogInfo(infoMessage)
-                    Return True
+                    Return xmlPfad
                 catch ex As SystemException
                     infoMessage := i"!!! Fehler beim Abspeichern von {xmlPfad} (" + ex:Message + ") !!!"
                     LogHelper.LogError(infoMessage, ex)
-                    Return False
+                    Return ""
                 end try
             catch ex As SystemException
                 infoMessage := i"!!! Allgemeiner Fehler in CreateSqlServerDataDic bei ConString={ConString} !!!"
                 LogHelper.LogError(infoMessage, ex)
-                Return False
+                Return ""
             end try
 
         END CLASS

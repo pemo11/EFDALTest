@@ -41,8 +41,8 @@ namespace EFDALTestGUI
             this.rbbDataReader = new System.Windows.Forms.RadioButton();
             this.libStatus = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblCurrentConfigPath = new System.Windows.Forms.Label();
-            this.lblCurrentDataDicPath = new System.Windows.Forms.Label();
+            this.txtCurrentConfigPath = new System.Windows.Forms.TextBox();
+            this.txtCurrentDataDicPath = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -94,41 +94,41 @@ namespace EFDALTestGUI
             // 
             // bnTestAuswahl
             // 
-            this.bnTestAuswahl.Location = new System.Drawing.Point(231, 20);
+            this.bnTestAuswahl.Location = new System.Drawing.Point(430, 20);
             this.bnTestAuswahl.Name = "bnTestAuswahl";
             this.bnTestAuswahl.Size = new System.Drawing.Size(155, 40);
             this.bnTestAuswahl.TabIndex = 4;
-            this.bnTestAuswahl.Text = "&Testauswahl (2)";
+            this.bnTestAuswahl.Text = "&Testauswahl (3)";
             this.bnTestAuswahl.UseVisualStyleBackColor = true;
             this.bnTestAuswahl.Click += new System.EventHandler(this.bnTestAuswahl_Click);
             // 
             // bnDataDicErstellen
             // 
-            this.bnDataDicErstellen.Location = new System.Drawing.Point(24, 20);
+            this.bnDataDicErstellen.Location = new System.Drawing.Point(248, 20);
             this.bnDataDicErstellen.Name = "bnDataDicErstellen";
             this.bnDataDicErstellen.Size = new System.Drawing.Size(155, 40);
             this.bnDataDicErstellen.TabIndex = 3;
-            this.bnDataDicErstellen.Text = "&DataDics erstellen (1)";
+            this.bnDataDicErstellen.Text = "&DataDics erstellen (2)";
             this.bnDataDicErstellen.UseVisualStyleBackColor = true;
             this.bnDataDicErstellen.Click += new System.EventHandler(this.bnDataDicErstellen_Click);
             // 
             // btnEditConfig
             // 
-            this.btnEditConfig.Location = new System.Drawing.Point(661, 20);
+            this.btnEditConfig.Location = new System.Drawing.Point(23, 20);
             this.btnEditConfig.Name = "btnEditConfig";
             this.btnEditConfig.Size = new System.Drawing.Size(155, 40);
             this.btnEditConfig.TabIndex = 2;
-            this.btnEditConfig.Text = "&Config-Auswahl";
+            this.btnEditConfig.Text = "&Config-Auswahl (1)";
             this.btnEditConfig.UseVisualStyleBackColor = true;
             this.btnEditConfig.Click += new System.EventHandler(this.btnEditConfig_Click);
             // 
             // btnTestStart
             // 
-            this.btnTestStart.Location = new System.Drawing.Point(455, 20);
+            this.btnTestStart.Location = new System.Drawing.Point(621, 20);
             this.btnTestStart.Name = "btnTestStart";
             this.btnTestStart.Size = new System.Drawing.Size(155, 40);
             this.btnTestStart.TabIndex = 1;
-            this.btnTestStart.Text = "&Test-Start (3)";
+            this.btnTestStart.Text = "&Test-Start (4)";
             this.btnTestStart.UseVisualStyleBackColor = true;
             this.btnTestStart.Click += new System.EventHandler(this.btnTestStart_Click);
             // 
@@ -181,8 +181,8 @@ namespace EFDALTestGUI
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.lblCurrentConfigPath, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblCurrentDataDicPath, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtCurrentConfigPath, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtCurrentDataDicPath, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 92);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -192,25 +192,25 @@ namespace EFDALTestGUI
             this.tableLayoutPanel2.Size = new System.Drawing.Size(835, 28);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
-            // lblCurrentConfigPath
+            // txtCurrentConfigPath
             // 
-            this.lblCurrentConfigPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblCurrentConfigPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCurrentConfigPath.Location = new System.Drawing.Point(3, 0);
-            this.lblCurrentConfigPath.Name = "lblCurrentConfigPath";
-            this.lblCurrentConfigPath.Size = new System.Drawing.Size(411, 28);
-            this.lblCurrentConfigPath.TabIndex = 6;
-            this.lblCurrentConfigPath.Text = "label1";
+            this.txtCurrentConfigPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtCurrentConfigPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCurrentConfigPath.Location = new System.Drawing.Point(3, 3);
+            this.txtCurrentConfigPath.Name = "txtCurrentConfigPath";
+            this.txtCurrentConfigPath.ReadOnly = true;
+            this.txtCurrentConfigPath.Size = new System.Drawing.Size(411, 25);
+            this.txtCurrentConfigPath.TabIndex = 8;
             // 
-            // lblCurrentDataDicPath
+            // txtCurrentDataDicPath
             // 
-            this.lblCurrentDataDicPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblCurrentDataDicPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCurrentDataDicPath.Location = new System.Drawing.Point(420, 0);
-            this.lblCurrentDataDicPath.Name = "lblCurrentDataDicPath";
-            this.lblCurrentDataDicPath.Size = new System.Drawing.Size(412, 28);
-            this.lblCurrentDataDicPath.TabIndex = 7;
-            this.lblCurrentDataDicPath.Text = "label1";
+            this.txtCurrentDataDicPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtCurrentDataDicPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCurrentDataDicPath.Location = new System.Drawing.Point(420, 3);
+            this.txtCurrentDataDicPath.Name = "txtCurrentDataDicPath";
+            this.txtCurrentDataDicPath.ReadOnly = true;
+            this.txtCurrentDataDicPath.Size = new System.Drawing.Size(412, 25);
+            this.txtCurrentDataDicPath.TabIndex = 9;
             // 
             // fmMain
             // 
@@ -228,6 +228,7 @@ namespace EFDALTestGUI
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -246,8 +247,8 @@ namespace EFDALTestGUI
         private System.Windows.Forms.Button bnTestAuswahl;
         private System.Windows.Forms.Button bnDataDicErstellen;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label lblCurrentConfigPath;
-        private System.Windows.Forms.Label lblCurrentDataDicPath;
+        private System.Windows.Forms.TextBox txtCurrentConfigPath;
+        private System.Windows.Forms.TextBox txtCurrentDataDicPath;
     }
 }
 
