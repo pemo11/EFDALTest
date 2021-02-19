@@ -40,10 +40,13 @@ namespace EFDALTestGUI
             this.rbbDataRow = new System.Windows.Forms.RadioButton();
             this.rbbDataReader = new System.Windows.Forms.RadioButton();
             this.libStatus = new System.Windows.Forms.ListBox();
-            this.lblCurrentTestPath = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblCurrentConfigPath = new System.Windows.Forms.Label();
+            this.lblCurrentDataDicPath = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -54,16 +57,16 @@ namespace EFDALTestGUI
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.libStatus, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lblCurrentTestPath, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.26474F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.813215F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.23835F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.491958F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.19173F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.61424F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.946314F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.22896F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.617702F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.59278F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(841, 573);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -71,14 +74,14 @@ namespace EFDALTestGUI
             // 
             this.progressBar1.BackColor = System.Drawing.Color.White;
             this.progressBar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.progressBar1.Location = new System.Drawing.Point(3, 193);
+            this.progressBar1.Location = new System.Drawing.Point(3, 184);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(835, 25);
+            this.progressBar1.Size = new System.Drawing.Size(835, 26);
             this.progressBar1.TabIndex = 2;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.bnTestAuswahl);
             this.panel1.Controls.Add(this.bnDataDicErstellen);
             this.panel1.Controls.Add(this.btnEditConfig);
@@ -86,7 +89,7 @@ namespace EFDALTestGUI
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(835, 81);
+            this.panel1.Size = new System.Drawing.Size(835, 83);
             this.panel1.TabIndex = 0;
             // 
             // bnTestAuswahl
@@ -115,7 +118,7 @@ namespace EFDALTestGUI
             this.btnEditConfig.Name = "btnEditConfig";
             this.btnEditConfig.Size = new System.Drawing.Size(155, 40);
             this.btnEditConfig.TabIndex = 2;
-            this.btnEditConfig.Text = "&Config-Datei";
+            this.btnEditConfig.Text = "&Config-Auswahl";
             this.btnEditConfig.UseVisualStyleBackColor = true;
             this.btnEditConfig.Click += new System.EventHandler(this.btnEditConfig_Click);
             // 
@@ -135,9 +138,9 @@ namespace EFDALTestGUI
             this.panel2.Controls.Add(this.rbbDataRow);
             this.panel2.Controls.Add(this.rbbDataReader);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 123);
+            this.panel2.Location = new System.Drawing.Point(3, 126);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(835, 64);
+            this.panel2.Size = new System.Drawing.Size(835, 52);
             this.panel2.TabIndex = 3;
             // 
             // rbbDataRow
@@ -168,19 +171,46 @@ namespace EFDALTestGUI
             this.libStatus.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.libStatus.FormattingEnabled = true;
             this.libStatus.ItemHeight = 16;
-            this.libStatus.Location = new System.Drawing.Point(3, 224);
+            this.libStatus.Location = new System.Drawing.Point(3, 216);
             this.libStatus.Name = "libStatus";
-            this.libStatus.Size = new System.Drawing.Size(835, 346);
+            this.libStatus.Size = new System.Drawing.Size(835, 354);
             this.libStatus.TabIndex = 4;
             // 
-            // lblCurrentTestPath
+            // tableLayoutPanel2
             // 
-            this.lblCurrentTestPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCurrentTestPath.Location = new System.Drawing.Point(3, 87);
-            this.lblCurrentTestPath.Name = "lblCurrentTestPath";
-            this.lblCurrentTestPath.Size = new System.Drawing.Size(835, 33);
-            this.lblCurrentTestPath.TabIndex = 5;
-            this.lblCurrentTestPath.Text = "label1";
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.lblCurrentConfigPath, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblCurrentDataDicPath, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 92);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(835, 28);
+            this.tableLayoutPanel2.TabIndex = 5;
+            // 
+            // lblCurrentConfigPath
+            // 
+            this.lblCurrentConfigPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblCurrentConfigPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCurrentConfigPath.Location = new System.Drawing.Point(3, 0);
+            this.lblCurrentConfigPath.Name = "lblCurrentConfigPath";
+            this.lblCurrentConfigPath.Size = new System.Drawing.Size(411, 28);
+            this.lblCurrentConfigPath.TabIndex = 6;
+            this.lblCurrentConfigPath.Text = "label1";
+            // 
+            // lblCurrentDataDicPath
+            // 
+            this.lblCurrentDataDicPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblCurrentDataDicPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCurrentDataDicPath.Location = new System.Drawing.Point(420, 0);
+            this.lblCurrentDataDicPath.Name = "lblCurrentDataDicPath";
+            this.lblCurrentDataDicPath.Size = new System.Drawing.Size(412, 28);
+            this.lblCurrentDataDicPath.TabIndex = 7;
+            this.lblCurrentDataDicPath.Text = "label1";
             // 
             // fmMain
             // 
@@ -197,6 +227,7 @@ namespace EFDALTestGUI
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -214,7 +245,9 @@ namespace EFDALTestGUI
         private System.Windows.Forms.RadioButton rbbDataReader;
         private System.Windows.Forms.Button bnTestAuswahl;
         private System.Windows.Forms.Button bnDataDicErstellen;
-        private System.Windows.Forms.Label lblCurrentTestPath;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label lblCurrentConfigPath;
+        private System.Windows.Forms.Label lblCurrentDataDicPath;
     }
 }
 

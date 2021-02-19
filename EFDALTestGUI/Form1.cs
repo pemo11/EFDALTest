@@ -17,6 +17,7 @@ namespace EFDALTestGUI
     {
         private string infoMessage;
         private string currentTestPath;
+        private string currentConfigPath;
         private string currentConstring;
         private List<DbTable> taDaten;
 
@@ -26,19 +27,30 @@ namespace EFDALTestGUI
             this.rbbDataReader.Checked = true;
             string appVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             this.Text += $" ({appVersion})";
+            lblCurrentConfigPath.Text = "Keine Config-Datei";
+            lblCurrentDataDicPath.Text = "Keine DataDic-Datei";
         }
 
         private void btnEditConfig_Click(object sender, EventArgs e)
         {
-            string configPfad = Path.Combine(Environment.CurrentDirectory, "DBTest.txt");
-            try
+            using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ProcessStartInfo pInfo = new ProcessStartInfo("Notepad", configPfad);
-                Process.Start(pInfo);
-            }
-            catch(SystemException ex)
-            {
-                MessageBox.Show($"Fehler - {configPfad} kann nicht angezeigt werden.",ex.Message);
+                ofd.InitialDirectory = Environment.CurrentDirectory;
+                ofd.Filter = "Config-Dateien (*.txt)|*.txt|Alle Dateien|*.*";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    currentConfigPath = ofd.FileName;
+                    lblCurrentConfigPath.Text = currentConfigPath;
+                    try
+                    {
+                        ProcessStartInfo pInfo = new ProcessStartInfo("Notepad", currentConfigPath);
+                        Process.Start(pInfo);
+                    }
+                    catch (SystemException ex)
+                    {
+                        MessageBox.Show($"Fehler - {currentConfigPath} kann nicht angezeigt werden.", ex.Message);
+                    }
+                }
             }
 
         }
@@ -53,6 +65,13 @@ namespace EFDALTestGUI
         {
             try
             {
+                // Gibt es eine Config-Datei?
+                if (this.currentConfigPath == null || !File.Exists(this.currentConfigPath))
+                {
+                    MessageBox.Show("Bitte zuerst ein Config-Datei auswählen", "Hinweis");
+                    return;
+                }
+                // Gibt es eine Test-Datei?
                 if (this.currentTestPath == null || !File.Exists(this.currentTestPath))
                 {
                     MessageBox.Show("Bitte zuerst ein DataDic (Xml-Datei) auswählen", "Hinweis");
@@ -119,14 +138,13 @@ namespace EFDALTestGUI
         private void bnDataDicErstellen_Click(object sender, EventArgs e)
         {
             // Config-Datei auswerten
-            string configPfad = Path.Combine(Environment.CurrentDirectory, "DBTest.txt");
             string configName = "";
             string dbName = "";
             int configCount = 0;
             double dauerSec = 0;
             DateTime startZeit = DateTime.Now;
             Dictionary<string, List<string>> dicConfig = new Dictionary<string, List<string>>();
-            using (StreamReader sr = new StreamReader(configPfad))
+            using (StreamReader sr = new StreamReader(currentConfigPath))
             {
                 while (!sr.EndOfStream)
                 {
@@ -242,11 +260,11 @@ namespace EFDALTestGUI
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 ofd.InitialDirectory = Path.GetTempPath();
-                ofd.Filter = "DataTic-Dateien (*.xml)|*.xml|Alle Dateien|*.*";
+                ofd.Filter = "DataDic-Dateien (*.xml)|*.xml|Alle Dateien|*.*";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     currentTestPath = ofd.FileName;
-                    lblCurrentTestPath.Text = currentTestPath;
+                    lblCurrentDataDicPath.Text = currentTestPath;
                 }
             }
         }
